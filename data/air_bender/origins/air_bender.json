@@ -1,0 +1,11 @@
+{
+  "powers": [
+    "air_bender:no_falldamage",
+    "air_bender:double_jump"
+  ],
+  "icon": "minecraft:redstone",
+  "order": 99,
+  "impact": 1,
+  "name": "Air Bender",
+  "description": "You can manipulate the air around you for your own advantage"
+}
