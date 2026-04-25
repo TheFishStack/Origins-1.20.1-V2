@@ -1,0 +1,14 @@
+{
+  "powers": [
+    "cat_warlock:cat",
+    "cat_warlock:waterbad",
+    "cat_warlock:mana",
+    "cat_warlock:magic",
+    "origins:scare_creepers"
+  ],
+  "icon": "minecraft:book",
+  "order": 99,
+  "impact": 2,
+  "name": "Cat Warlock",
+  "description": "A feline warlock"
+}

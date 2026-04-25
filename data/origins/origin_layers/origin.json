@@ -1,6 +1,7 @@
 {
   "replace": false,
   "origins": [
-    "air_bender:air_bender"
+    "air_bender:air_bender",
+    "cat_warlock:cat_warlock"
   ]
 }

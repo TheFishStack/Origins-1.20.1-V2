@@ -1,0 +1,86 @@
+{
+  "type": "origins:multiple",
+
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 50,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 16,
+      "condition": {
+        "type": "origins:resource",
+        "resource": "cat_warlock:waterbad_resource",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    }
+  },
+
+  "charge": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "cat_warlock:waterbad_resource",
+      "change": 10
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.0
+        },
+        {
+          "type": "origins:in_rain"
+        }
+      ]
+    }
+  },
+  "decharge": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "cat_warlock:waterbad_resource",
+      "change": -5
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.0,
+          "inverted": true
+        },
+        {
+          "type": "origins:in_rain",
+          "inverted": true
+        }
+      ]
+    }
+  },
+
+  "waterisbad": {
+    "type": "origins:damage_over_time",
+    "onset_delay": 1,
+    "damage": 2,
+    "damage_easy": 1,
+    "damage_source": {
+      "name": "hurt_by_water",
+      "unblockable": true,
+      "bypasses_armor": true
+    },
+    "protection_enchantment": "origins:water_protection",
+    "protection_effectiveness": 1.0,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "cat_warlock:waterbad_resource",
+      "comparison": "==",
+      "compare_to": 50
+    }
+  }
+}

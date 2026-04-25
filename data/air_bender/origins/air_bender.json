@@ -1,7 +1,7 @@
 {
   "powers": [
     "air_bender:no_falldamage",
-    "air_bender:double_jump"
+    "air_bender:jump"
   ],
   "icon": "minecraft:feather",
   "order": 99,
