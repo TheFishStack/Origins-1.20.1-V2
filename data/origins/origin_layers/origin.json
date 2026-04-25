@@ -1,11 +1,6 @@
 {
   "replace": false,
   "origins": [
-    "demon:demon",
-    "human_fish:human_fish",
-    "priestess_of_light:priestess_of_light",
-    "cyborg:cyborg",
-    "shadow_warrior:shadow_warrior",
-    "vampire:vampire"
+    "air_bender:air_bender"
   ]
 }

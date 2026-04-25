@@ -1,0 +1,9 @@
+{
+  "name": "No falldamage",
+  "description": "Everything is under control",
+  "type": "origins:invulnerability",
+  "damage_condition": {
+    "type": "origins:name",
+    "name": "fall"
+  }
+}

@@ -3,7 +3,7 @@
     "air_bender:no_falldamage",
     "air_bender:double_jump"
   ],
-  "icon": "minecraft:redstone",
+  "icon": "minecraft:feather",
   "order": 99,
   "impact": 1,
   "name": "Air Bender",
