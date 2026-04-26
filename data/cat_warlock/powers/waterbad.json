@@ -1,4 +1,6 @@
 {
+  "name": "H2O",
+  "description": "Water hurts you when you are wet enough",
   "type": "origins:multiple",
 
   "resource": {

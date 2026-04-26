@@ -1,12 +1,12 @@
 {
   "powers": [
-    "weeping_angel:teleport",
     "weeping_angel:stoneturned",
-    "weeping_angel:fast"
+    "weeping_angel:fast",
+    "weeping_angel:teleport"
   ],
   "icon": "minecraft:stone",
   "order": 99,
   "impact": 2,
   "name": "Weeping Angel",
-  "description": "Stalker"
+  "description": "A dangerous pile of rock"
 }

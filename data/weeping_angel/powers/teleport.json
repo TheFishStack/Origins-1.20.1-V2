@@ -1,6 +1,6 @@
 {
   "name": "Teleport",
-  "description": "Everything is under control",
+  "description": "You can teleport others away. Where do they go? Not even you know",
   "type": "origins:multiple",
 
   "use": {

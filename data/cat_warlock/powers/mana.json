@@ -1,4 +1,6 @@
 {
+  "name": "Mana",
+  "description": "Everything has a cost. Your spells cost mana",
   "type": "origins:multiple",
 
   "resource": {

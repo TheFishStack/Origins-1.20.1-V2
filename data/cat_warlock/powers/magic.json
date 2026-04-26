@@ -1,4 +1,6 @@
 {
+  "name": "Warlock",
+  "description": "Select between 3 spells from your arsenal and cast away",
   "type": "origins:multiple",
 
   "resource": {
