@@ -1,0 +1,68 @@
+{
+  "name": "Stone Turned",
+  "description": "You turn to stone if someone looks at you",
+  "type": "origins:multiple",
+
+  "detect_seen": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 100,
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:execute_command",
+              "command": "power remove @s weeping_angel:stone"
+            }
+          },
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:execute_command",
+              "command": "power grant @s weeping_angel:stone"
+            }
+          }
+        ]
+      },
+      "bientity_condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:invert",
+            "condition": {
+              "type": "origins:actor_condition",
+              "condition": {
+                "type": "origins:raycast",
+                "distance": 100,
+                "block": false,
+                "entity": true,
+                "shape_type": "visual",
+                "fluid_handling": "any",
+
+                "hit_bientity_condition": {
+                  "type": "origins:target_condition",
+                  "condition": {
+                    "type": "origins:command",
+                    "command": "execute if entity @s[tag=fs_weeping_angel]",
+                    "comparison": "==",
+                    "compare_to": 1
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:living"
+            }
+          }
+        ]
+      }
+    },
+    "interval": 1
+  }
+}
