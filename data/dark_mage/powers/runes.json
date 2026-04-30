@@ -1,0 +1,19 @@
+{
+  "name": "Runes",
+  "description": "Hostile mobs ignore you unless attacked or touched. You are just too fast",
+  "type": "origins:action_on_block_use",
+  "block_action": {
+    "type": "origins:execute_command",
+    "command": "summon pig"
+  },
+  "item_condition": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "directions": ["up"],
+  "condition": {
+    "type": "origins:sneaking"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "powers": [
+    "dark_mage:runes"
+  ],
+  "icon": "minecraft:stone",
+  "order": 99,
+  "impact": 2,
+  "name": "Dark Mage",
+  "description": "A dangerous pile of rock"
+}
