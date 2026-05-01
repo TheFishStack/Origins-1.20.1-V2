@@ -1,4 +1,4 @@
-execute align y positioned ~ ~1 ~ as @e[type=armor_stand,tag=fs_rune,dy=0,dx=0,dz=0, limit=1, sort= nearest] run kill @s
+execute align y positioned ~ ~1 ~ if entity @e[type=armor_stand,tag=fs_rune,x=0,y=0,z=0] as @e[type=armor_stand,tag=fs_rune,dy=0,dx=0,dz=0, limit=1, sort= nearest] run kill @s
 
 execute align y positioned ~ ~1 ~ if score RNG fs_counter matches 0 run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1b,Small:1b,Invisible:1b,Tags:["fs_rune"," fs_rune0"]}
 execute align y positioned ~ ~1 ~ if score RNG fs_counter matches 1 run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1b,Small:1b,Invisible:1b,Tags:["fs_rune"," fs_rune1"]}
