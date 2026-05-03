@@ -43,5 +43,32 @@
         }
       ]
     }
+  },
+
+  "remove": {
+    "type": "origins:action_on_entity_use",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:execute_command",
+        "command": "say test"
+      }
+    },
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:command",
+        "command": "execute if entity @s[tag=fs_rune]",
+        "comparison": "==",
+        "compare_to": 1
+      }
+    },
+    "item_condition": {
+      "type": "origins:empty"
+    },
+    "hands": ["main_hand"],
+    "condition": {
+      "type": "origins:sneaking"
+    }
   }
 }
