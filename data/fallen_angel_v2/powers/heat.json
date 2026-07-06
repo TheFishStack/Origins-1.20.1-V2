@@ -1,0 +1,64 @@
+{
+  "name": "Heat",
+  "description": "You are still used to the hot atmosphere in the underworld and therefore don´t take fire damage (Known issue: swim in lava is a little buggy)",
+  "type": "origins:multiple",
+
+  "fire_immunity": {
+    "type": "origins:fire_immunity"
+  },
+
+  "sight": {
+    "type": "origins:lava_vision",
+    "s": 0,
+    "v": 15
+  },
+
+  "spd": {
+    "type": "origins:modify_lava_speed",
+    "modifier": {
+      "operation": "addition",
+      "value": 0.2
+    }
+  },
+
+  "fall": {
+    "type": "origins:action_over_time",
+    "interval": 4,
+    "entity_action": {
+      "type": "origins:set_fall_distance",
+      "fall_distance": 0
+    },
+    "condition": {
+      "type": "origins:in_block",
+      "block_condition": {
+        "type": "origins:block",
+        "block": "lava"
+      }
+    }
+  },
+
+  "swim": {
+    "type": "origins:swimming",
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:submerged_in",
+          "fluid": "lava"
+        },
+        {
+          "type": "origins:in_block_anywhere",
+          "comparison": ">=",
+          "compare_to": 1,
+          "block_condition": {
+            "type": "origins:fluid",
+            "fluid_condition": {
+              "type": "origins:in_tag",
+              "tag": "minecraft:lava"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

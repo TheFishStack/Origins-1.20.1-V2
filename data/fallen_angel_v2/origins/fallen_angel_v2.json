@@ -1,0 +1,15 @@
+{
+  "powers": [
+    "fallen_angel_v2:celestial_being",
+    "fallen_angel_v2:stone",
+    "fallen_angel_v2:demon",
+    "fallen_angel_v2:heat",
+    "fallen_angel_v2:fireball",
+    "fallen_angel_v2:dash"
+  ],
+  "icon": "minecraft:weeping_vines",
+  "order": 99,
+  "impact": 2,
+  "name": "Fallen Angel (V2)",
+  "description": "You got kicked out of heaven AND the underworld and landed on the earth."
+}
