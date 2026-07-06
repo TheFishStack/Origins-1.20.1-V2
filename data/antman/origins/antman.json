@@ -1,0 +1,10 @@
+{
+  "powers": [
+    "antman:grow"
+  ],
+  "icon": "minecraft:ghast_tear",
+  "order": 99,
+  "impact": 1,
+  "name": "Antman",
+  "description": "You can shrink and grow at the press of a button"
+}

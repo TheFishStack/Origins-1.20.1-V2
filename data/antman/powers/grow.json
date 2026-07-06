@@ -1,0 +1,147 @@
+{
+  "name": "Grow/Shrink",
+  "description": "Grow with primary, shrink with secondary",
+  "type": "origins:multiple",
+
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 6,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 0
+    }
+  },
+
+  "up": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "antman:grow_resource",
+          "change": 1
+        }
+      ]
+    },
+    "key": "key.origins.primary_active",
+    "cooldown": 20,
+    "hud_render": {
+      "should_render": false
+    }
+  },
+
+  "down": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "antman:grow_resource",
+          "change": -1
+        }
+      ]
+    },
+    "key": "key.origins.secondary_active",
+    "cooldown": 20,
+    "hud_render": {
+      "should_render": false
+    }
+  },
+
+  "dash": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "antman:grow_resource",
+            "comparison": "==",
+            "compare_to": 0
+          },
+          "action": {
+            "type": "origins:execute_command",
+            "command": "scale set pehkui:base 0.125 @s"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "antman:grow_resource",
+            "comparison": "==",
+            "compare_to": 1
+          },
+          "action": {
+            "type": "origins:execute_command",
+            "command": "scale set pehkui:base 0.25 @s"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "antman:grow_resource",
+            "comparison": "==",
+            "compare_to": 2
+          },
+          "action": {
+            "type": "origins:execute_command",
+            "command": "scale set pehkui:base 0.5 @s"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "antman:grow_resource",
+            "comparison": "==",
+            "compare_to": 3
+          },
+          "action": {
+            "type": "origins:execute_command",
+            "command": "scale set pehkui:base 1 @s"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "antman:grow_resource",
+            "comparison": "==",
+            "compare_to": 4
+          },
+          "action": {
+            "type": "origins:execute_command",
+            "command": "scale set pehkui:base 2 @s"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "antman:grow_resource",
+            "comparison": "==",
+            "compare_to": 5
+          },
+          "action": {
+            "type": "origins:execute_command",
+            "command": "scale set pehkui:base 4 @s"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "antman:grow_resource",
+            "comparison": "==",
+            "compare_to": 6
+          },
+          "action": {
+            "type": "origins:execute_command",
+            "command": "scale set pehkui:base 8 @s"
+          }
+        }
+      ]
+    },
+    "interval": 20
+  }
+}
