@@ -1,0 +1,23 @@
+{
+  "name": "Miner",
+  "description": "You start with a stone pickaxe and have one more level of fortune at all times",
+  "type": "origins:multiple",
+
+  "pickaxe": {
+    "type": "origins:starting_equipment",
+    "stacks": [
+      {
+        "item": "minecraft:stone_pickaxe"
+      }
+    ]
+  },
+
+  "fortune": {
+    "type": "origins:modify_enchantment_level",
+    "enchantment": "minecraft:fortune",
+    "modifier": {
+      "operation": "add_base_early",
+      "value": 1
+    }
+  }
+}

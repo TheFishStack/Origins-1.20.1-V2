@@ -1,0 +1,14 @@
+{
+  "name": "Tough",
+  "description": "Your eyes adapted to the dark of the caves",
+  "type": "origins:multiple",
+
+  "tough": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.armor",
+      "value": 4,
+      "operation": "addition"
+    }
+  }
+}

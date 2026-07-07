@@ -1,0 +1,13 @@
+{
+  "powers": [
+    "dwarf:miner",
+    "dwarf:nightvision",
+    "dwarf:tough",
+    "dwarf:sleep"
+  ],
+  "icon": "minecraft:stone_pickaxe",
+  "order": 99,
+  "impact": 2,
+  "name": "Dwarf",
+  "description": "Expert miner and resilient survivor"
+}

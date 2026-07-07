@@ -1,0 +1,15 @@
+{
+  "name": "Nightvision",
+  "description": "Your eyes adapted to the dark of the caves",
+  "type": "origins:multiple",
+
+  "night_vision": {
+    "type": "origins:night_vision",
+    "strength": 1,
+    "condition": {
+      "type": "origins:brightness",
+      "comparison": "<=",
+      "compare_to": 0.5
+    }
+  }
+}
