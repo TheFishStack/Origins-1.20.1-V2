@@ -1,0 +1,32 @@
+{
+  "name": "Sneeze",
+  "description": "You can sneeze slime balls at your enemies",
+  "type": "origins:multiple",
+
+  "shoot": {
+    "type": "origins:fire_projectile",
+    "entity_type": "minecraft:snowball",
+    "cooldown": 100,
+
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 21
+    },
+    "count": 1,
+    "interval": 5,
+    "sound": "minecraft:entity.panda.sneeze",
+    "tag": "{Item: {id: 'minecraft:slime_ball', Count: 1b}}",
+    "key": {
+      "key": "key.origins.secondary_active",
+      "continuous": false
+    },
+    "shooter_action": {
+      "type": "origins:give",
+      "stack": {
+        "item": "minecraft:slime_ball",
+        "amount": 1
+      }
+    }
+  }
+}

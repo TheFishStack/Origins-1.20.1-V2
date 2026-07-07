@@ -1,0 +1,19 @@
+{
+  "name": "Climb",
+  "description": "You can climb up bamboo stalks",
+  "type": "origins:climbing",
+  "condition": {
+    "type": "origins:in_block_anywhere",
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "origins:cobwebs"
+    }
+  },
+  "hold_condition": {
+    "type": "origins:in_block_anywhere",
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "origins:cobwebs"
+    }
+  }
+}

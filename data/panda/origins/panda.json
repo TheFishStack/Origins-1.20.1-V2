@@ -1,0 +1,14 @@
+{
+  "powers": [
+    "panda:only_bamboo",
+    "panda:climb",
+    "panda:sneeze",
+    "panda:roll",
+    "panda:heavy"
+  ],
+  "icon": "minecraft:panda_spawn_egg",
+  "order": 99,
+  "impact": 1,
+  "name": "Panda",
+  "description": "like the animal"
+}
