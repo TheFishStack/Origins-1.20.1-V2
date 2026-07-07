@@ -1,11 +1,12 @@
 {
   "name": "Heavy",
-  "description": "You sink faster in water",
+  "description": "You sink faster in water and cat swim",
   "type": "origins:multiple",
 
   "sinkinginwater": {
     "type": "origins:ignore_water"
   },
+
   "modify_waterspeed": {
     "type": "origins:modify_falling",
     "velocity": 0.025,
