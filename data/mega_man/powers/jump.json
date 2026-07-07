@@ -1,0 +1,40 @@
+{
+  "name": "Movement",
+  "description": "A simple dash that costs charge. You still take fall damage!!",
+  "type": "origins:multiple",
+
+  "dash": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:add_velocity",
+          "z": 1.5,
+          "space": "local",
+          "client": true,
+          "server": true,
+          "set": true
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "mega_man:charge_storage",
+          "change": -5
+        }
+      ]
+    },
+    "key": "key.origins.primary_active",
+    "cooldown": 60,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 23
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "mega_man:charge_storage",
+      "comparison": ">=",
+      "compare_to": 5
+    }
+  }
+}

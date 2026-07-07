@@ -1,0 +1,12 @@
+{
+  "powers": [
+    "mega_man:charge",
+    "mega_man:sniper",
+    "mega_man:jump"
+  ],
+  "icon": "minecraft:lapis_lazuli",
+  "order": 99,
+  "impact": 1,
+  "name": "Mega Man",
+  "description": "blue guy with a gun"
+}
