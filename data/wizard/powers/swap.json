@@ -1,0 +1,32 @@
+{
+  "name": "Swap",
+  "description": "Swap with the marked entity",
+
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:execute_command",
+        "command": "summon armor_stand ~ ~ ~ {Invulnerable:1b,Marker:1b,Invisible:1b,Tags:[\"fs_wizard_armorstand\"]}"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "tp @s @e[limit=1,sort=nearest,tag=fs_wizard_marker]"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "tp @e[limit=1,sort=nearest,tag=fs_wizard_marker] @e[limit=1,sort=nearest,tag=fs_wizard_armorstand]"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "kill @e[limit=1,sort=nearest,tag=fs_wizard_armorstand]"
+      }
+    ]
+  },
+  "key": "key.origins.secondary_active",
+  "cooldown": 200,
+  "hud_render": {
+    "should_render": true
+  }
+}

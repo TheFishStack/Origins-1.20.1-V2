@@ -1,0 +1,11 @@
+{
+  "powers": [
+    "wizard:mark",
+    "wizard:swap"
+  ],
+  "icon": "minecraft:stick",
+  "order": 99,
+  "impact": 1,
+  "name": "Wizard",
+  "description": "a wizard of chaos and mischief"
+}
