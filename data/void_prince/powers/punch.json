@@ -1,0 +1,56 @@
+{
+  "name": "Volitile Punches",
+  "description": "Hitting something makes it volitile and take double damage. Hitting it again removes the volitile but gives you absorption for a few seconds",
+
+  "type": "origins:action_on_hit",
+  "bientity_action": {
+    "type": "origins:if_else",
+    "condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:living"
+          },
+          {
+            "type": "origins:power",
+            "power": "void_prince:volitile"
+          }
+        ]
+      }
+    },
+    "if_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:revoke_power",
+            "power": "void_prince:volitile",
+            "source": "void_prince:punch"
+          }
+        },
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "minecraft:absorption",
+              "amplifier": 0,
+              "duration": 100
+            }
+          }
+        }
+      ]
+    },
+    "else_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:grant_power",
+        "power": "void_prince:volitile",
+        "source": "void_prince:punch"
+      }
+    }
+  }
+}

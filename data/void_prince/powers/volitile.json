@@ -1,0 +1,46 @@
+{
+  "hidden": true,
+  "type": "origins:multiple",
+
+  "particle": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle minecraft:dust 0 0 0 1 ~ ~1 ~ .5 .5 .5 1 5 normal"
+    },
+    "interval": 1
+  },
+
+  "weaker": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "name": "Volitile",
+      "operation": "multiply_total_multiplicative",
+      "value": 1
+    }
+  },
+
+  "unvolitile": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:volitile_resource",
+      "change": -1
+    }
+  },
+
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 20,
+    "start_value": 20,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 14
+    },
+    "min_action": {
+      "type": "origins:execute_command",
+      "command": "power remove @s void_prince:volitile"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "powers": [
+    "void_prince:punch",
+    "void_prince:blink",
+    "void_prince:pockets"
+  ],
+  "icon": "minecraft:black_dye",
+  "order": 99,
+  "impact": 1,
+  "name": "Void Prince",
+  "description": "A brute fighter that discovered cosmic power"
+}
