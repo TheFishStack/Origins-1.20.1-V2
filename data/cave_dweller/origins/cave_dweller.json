@@ -1,0 +1,15 @@
+{
+  "powers": [
+    "cave_dweller:sun",
+    "cave_dweller:nightvision",
+    "cave_dweller:food",
+    "cave_dweller:fast",
+    "cave_dweller:drown",
+    "cave_dweller:scary"
+  ],
+  "icon": "minecraft:deepslate",
+  "order": 99,
+  "impact": 3,
+  "name": "Cave Dweller",
+  "description": "Expert hunter"
+}

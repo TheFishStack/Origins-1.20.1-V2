@@ -1,0 +1,48 @@
+{
+  "name": "Food",
+  "description": "Food is only half as effective for you but killing something gives you a bit of food back. When you get low on food you start to consume yourself and exchange a little health for food",
+  "type": "origins:multiple",
+
+  "ineffective": {
+    "type": "origins:modify_food",
+    "food_modifier": {
+      "name": "Half food points",
+      "operation": "multiply_total_multiplicative",
+      "value": -0.5
+    }
+  },
+
+  "consume_self": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:damage",
+          "amount": 2,
+          "damage_type": "minecraft:starve"
+        },
+        {
+          "type": "origins:feed",
+          "food": 2,
+          "saturation": 1
+        }
+      ]
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:food_level",
+      "comparison": "<=",
+      "compare_to": 4
+    }
+  },
+
+  "food_steal": {
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+      "type": "origins:feed",
+      "food": 2,
+      "saturation": 1
+    }
+  }
+}

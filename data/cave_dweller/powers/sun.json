@@ -1,0 +1,15 @@
+{
+  "name": "Sun",
+  "description": "The sun burns your skin of you stay too long",
+
+  "type": "origins:damage_over_time",
+  "interval": 20,
+  "onset_delay": 1,
+  "damage": 2,
+  "damage_easy": 1,
+  "damage_type": "minecraft:dry_out",
+  "protection_effectiveness": 0,
+  "condition": {
+    "type": "origins:exposed_to_sun"
+  }
+}

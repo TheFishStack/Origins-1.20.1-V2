@@ -1,0 +1,23 @@
+{
+  "name": "Too fast to see",
+  "description": "Hostile mobs ignore you unless attacked or touched. You are just too fast",
+  "type": "origins:multiple",
+
+  "sight": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:visibility 0.05 @s"
+    },
+    "interval": 200
+  },
+
+  "faster": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "addition",
+      "value": 0.05
+    }
+  }
+}
