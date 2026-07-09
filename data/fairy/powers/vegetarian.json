@@ -1,0 +1,8 @@
+{
+  "name": "Vegetarian",
+  "description": "You dont eat meat",
+  "type": "origins:prevent_item_use",
+  "item_condition": {
+    "type": "origins:meat"
+  }
+}

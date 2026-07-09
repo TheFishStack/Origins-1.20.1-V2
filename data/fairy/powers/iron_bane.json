@@ -1,0 +1,91 @@
+{
+  "name": "Iron's Bane",
+  "description": "Having anything iron in your inventory hurts you",
+  "type": "origins:multiple",
+
+  "armor": {
+    "type": "origins:restrict_armor",
+    "head": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:iron_helmet"
+      }
+    },
+    "chest": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:iron_chestplate"
+      }
+    },
+    "legs": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:iron_leggings"
+      }
+    },
+    "feet": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:iron_boots"
+      }
+    }
+  },
+
+  "items": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:set_on_fire",
+      "duration": 4
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:inventory",
+      "process_mode": "items",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": [
+          { "item": "minecraft:iron_sword" },
+          { "item": "minecraft:iron_pickaxe" },
+          { "item": "minecraft:iron_axe" },
+          { "item": "minecraft:iron_shovel" },
+          { "item": "minecraft:iron_hoe" },
+          { "item": "minecraft:shears" },
+          { "item": "minecraft:shield" },
+          { "item": "minecraft:bucket" },
+          { "item": "minecraft:water_bucket" },
+          { "item": "minecraft:lava_bucket" },
+          { "item": "minecraft:powder_snow_bucket" },
+          { "item": "minecraft:milk_bucket" },
+          { "item": "minecraft:flint_and_steel" },
+
+          { "item": "minecraft:iron_block" },
+          { "item": "minecraft:iron_bars" },
+          { "item": "supplementaries:iron_gate" },
+          { "item": "minecraft:iron_door" },
+          { "item": "minecraft:iron_trapdoor" },
+          { "item": "minecraft:raw_iron_block" },
+          { "item": "chimes:iron_chimes" },
+          { "item": "minecraft:iron_helmet" },
+          { "item": "minecraft:iron_chestplate" },
+          { "item": "minecraft:iron_leggings" },
+          { "item": "minecraft:iron_boots" },
+          { "item": "minecraft:iron_ingot" },
+          { "item": "minecraft:iron_nugget" },
+          { "item": "minecraft:raw_iron" },
+
+          { "item": "minecraft:iron_horse_armor" },
+          { "item": "ad_astra:iron_plate" },
+          { "item": "ad_astra:iron_rod" },
+          { "item": "betterend:iron_hammer" },
+          { "item": "create:iron_sheet" },
+          { "item": "create:crushed_raw_iron" },
+          { "item": "farmersdelight:iron_knife" },
+          { "item": "nethersdelight:iron_machete" },
+          { "item": "obese_crops:iron_scythe" }
+        ]
+      },
+      "comparison": ">",
+      "compare_to": 0
+    }
+  }
+}

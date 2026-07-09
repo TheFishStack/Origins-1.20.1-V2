@@ -1,0 +1,119 @@
+{
+  "name": "Mana",
+  "description": "Mana fills up over time or by using glistering melons. You can use your mana for necromancy although i dont think they want to be raised..",
+  "type": "origins:multiple",
+
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 200,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 0,
+      "condition": {
+        "type": "origins:resource",
+        "resource": "fairy:mana_resource",
+        "comparison": "<",
+        "compare_to": 200
+      }
+    }
+  },
+
+  "charge": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "fairy:mana_resource",
+      "change": 2
+    }
+  },
+
+  "boost": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:equipped_item_action",
+          "equipment_slot": "mainhand",
+          "action": {
+            "type": "origins:consume",
+            "amount": 1
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "playsound minecraft:entity.strider.eat master @a ~ ~ ~ 1 0"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "fairy:mana_resource",
+          "change": 50
+        }
+      ]
+    },
+    "cooldown": 20,
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.use",
+      "continuous": false
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:glistering_melon_slice"
+            }
+          }
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  },
+
+  "summon": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:raycast",
+      "distance": 16,
+      "block": true,
+      "entity": false,
+      "shape_type": "visual",
+      "fluid_handling": "none",
+      "hit_action": {
+        "type": "origins:change_resource",
+        "resource": "fairy:mana_resource",
+        "change": -50,
+        "operation": "add"
+      },
+      "command_at_hit": "summon zombie ~ ~1 ~ {AbsorptionAmount:20f,Health:20f,IsBaby:0b}",
+      "command_along_ray": "particle minecraft:soul_fire_flame",
+      "command_step": 1,
+      "command_along_ray_only_on_hit": true
+    },
+    "cooldown": 10,
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": false
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "fairy:mana_resource",
+      "comparison": ">=",
+      "compare_to": 50
+    }
+  }
+}

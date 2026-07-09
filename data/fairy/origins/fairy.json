@@ -1,0 +1,13 @@
+{
+  "powers": [
+    "fairy:winged",
+    "fairy:mana",
+    "fairy:iron_bane",
+    "fairy:vegetarian"
+  ],
+  "icon": "minecraft:glowstone_dust",
+  "order": 99,
+  "impact": 3,
+  "name": "Fairy",
+  "description": "Only bad intentions"
+}
