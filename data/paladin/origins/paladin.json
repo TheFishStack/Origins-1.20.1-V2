@@ -1,0 +1,12 @@
+{
+  "powers": [
+    "paladin:hands",
+    "paladin:smite",
+    "paladin:immune"
+  ],
+  "icon": "minecraft:iron_sword",
+  "order": 99,
+  "impact": 1,
+  "name": "Paladin",
+  "description": "fiercely dedicated champion of a cause"
+}

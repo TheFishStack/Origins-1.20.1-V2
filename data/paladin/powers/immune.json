@@ -1,0 +1,39 @@
+{
+  "name": "Immune to poisons",
+  "description": "and lightning damage",
+  "type": "origins:multiple",
+
+  "sinkinginwater": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "wither"
+        },
+        {
+          "type": "origins:name",
+          "name": "wither.player"
+        },
+        {
+          "type": "origins:name",
+          "name": "magic"
+        },
+        {
+          "type": "origins:name",
+          "name": "magic.player"
+        },
+
+        {
+          "type": "origins:name",
+          "name": "lightningBolt"
+        },
+        {
+          "type": "origins:name",
+          "name": "lightningBolt.player"
+        }
+      ]
+    }
+  }
+}

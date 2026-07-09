@@ -1,0 +1,74 @@
+{
+  "name": "Divine Smite",
+  "description": "Killing an undead mob charges your magic. When filled you can use it to shoot a lightning bolt",
+  "type": "origins:multiple",
+
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 7,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 5,
+      "condition": {
+        "type": "origins:resource",
+        "resource": "paladin:smite_resource",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    }
+  },
+
+  "charge": {
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "paladin:smite_resource",
+      "change": 1
+    },
+    "cooldown": 1,
+    "target_condition": {
+      "type": "origins:entity_group",
+      "group": "undead"
+    }
+  },
+
+  "shoot": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:raycast",
+      "distance": 16,
+      "block": true,
+      "entity": true,
+      "shape_type": "visual",
+      "fluid_handling": "any",
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:execute_command",
+          "command": "summon lightning_bolt"
+        }
+      },
+      "hit_action": {
+        "type": "origins:change_resource",
+        "resource": "paladin:smite_resource",
+        "operation": "set",
+        "change": 0
+      },
+      "command_at_hit": "summon lightning_bolt",
+      "command_along_ray": "particle minecraft:soul_fire_flame",
+      "command_step": 1,
+      "command_along_ray_only_on_hit": true
+    },
+    "cooldown": 20,
+    "hud_render": {
+      "should_render": false
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "paladin:smite_resource",
+      "comparison": "==",
+      "compare_to": 7
+    }
+  }
+}
