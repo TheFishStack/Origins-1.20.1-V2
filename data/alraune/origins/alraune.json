@@ -1,0 +1,13 @@
+{
+  "powers": [
+    "alraune:light",
+    "alraune:vulnerable",
+    "alraune:no_falldamage",
+    "alraune:jump"
+  ],
+  "icon": "minecraft:oak_leaves",
+  "order": 99,
+  "impact": 2,
+  "name": "Alraune",
+  "description": "a pile of nature"
+}

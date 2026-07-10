@@ -1,0 +1,64 @@
+{
+  "name": "Photosynthesis",
+  "description": "The sun is a deadly lazer. Not to you tho..",
+  "type": "origins:multiple",
+
+  "storage": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 50,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+      "bar_index": 14
+    }
+  },
+
+  "charge": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "alraune:light_storage",
+      "change": 2
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:exposed_to_sun"
+    }
+  },
+
+  "feed": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:feed",
+          "food": 2,
+          "saturation": 0
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "alraune:light_storage",
+          "change": -1
+        }
+      ]
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:food_level",
+          "comparison": "<",
+          "compare_to": 20
+        },
+        {
+          "type": "origins:resource",
+          "resource": "alraune:light_storage",
+          "comparison": ">",
+          "compare_to": 0
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "No falldamage",
+  "description": "Everything is under control",
+  "type": "origins:multiple",
+
+  "bonemeal": {
+    "type": "origins:action_on_land",
+    "entity_action": {
+      "type": "origins:block_action_at",
+      "block_action": {
+        "type": "origins:offset",
+        "action": {
+          "type": "origins:bonemeal",
+          "effects": true
+        },
+        "y": -1
+      }
+    },
+    "condition": {
+      "type": "origins:fall_distance",
+      "comparison": ">",
+      "compare_to": 4
+    }
+  },
+
+  "fall": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fall"
+    }
+  }
+}

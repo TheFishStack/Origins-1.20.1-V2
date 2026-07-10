@@ -1,0 +1,39 @@
+{
+  "name": "Vulnerable",
+  "description": "As a few leaves, axes and fire are pretty effective against you",
+  "type": "origins:multiple",
+
+  "axes": {
+    "type": "origins:modify_damage_taken",
+    "bientity_condition": {
+      "type": "origins:actor_condition",
+      "condition": {
+        "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "minecraft:axes"
+          }
+        }
+      }
+    },
+    "modifier": {
+      "name": "Weak to axes",
+      "operation": "addition",
+      "value": 5.5
+    }
+  },
+
+  "fire": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:set_on_fire",
+      "duration": 4
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:on_fire"
+    }
+  }
+}
