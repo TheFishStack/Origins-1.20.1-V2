@@ -1,0 +1,223 @@
+{
+  "name": "Mage",
+  "description": "Select between 3 spells from your arsenal and cast away",
+  "type": "origins:multiple",
+
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 3,
+    "hud_render": {
+      "should_render": false
+    },
+    "max_action": {
+      "type": "origins:change_resource",
+      "resource": "dark_mage:magic_resource",
+      "change": 0,
+      "operation": "set"
+    }
+  },
+
+  "actionbar": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "dark_mage:magic_resource",
+            "comparison": "==",
+            "compare_to": 0
+          },
+          "action": {
+            "type": "origins:execute_command",
+            "command": "title @s actionbar {\"text\":\"Fireball\",\"color\":\"dark_purple\"}"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "dark_mage:magic_resource",
+            "comparison": "==",
+            "compare_to": 1
+          },
+          "action": {
+            "type": "origins:execute_command",
+            "command": "title @s actionbar {\"text\":\"Freeze Ray\",\"color\":\"aqua\"}"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "dark_mage:magic_resource",
+            "comparison": "==",
+            "compare_to": 2
+          },
+          "action": {
+            "type": "origins:execute_command",
+            "command": "title @s actionbar {\"text\":\"Self Heal\",\"color\":\"green\"}"
+          }
+        }
+      ]
+    },
+    "interval": 10
+  },
+
+  "select": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "dark_mage:magic_resource",
+      "change": 1
+    },
+    "cooldown": 1,
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.origins.secondary_active",
+      "continuous": false
+    }
+  },
+
+  "cast_fireball": {
+    "type": "origins:fire_projectile",
+    "entity_type": "minecraft:dragon_fireball",
+    "cooldown": 50,
+    "count": 1,
+    "speed": 0.5,
+    "divergence": 1,
+    "sound": "minecraft:entity.ender_dragon.shoot",
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+      "bar_index": 11
+    },
+    "tag": "{pickup:0b}",
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": false
+    },
+    "shooter_action": {
+      "type": "origins:change_resource",
+      "resource": "dark_mage:mana_resource",
+      "change": -100,
+      "operation": "add"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "dark_mage:magic_resource",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "dark_mage:mana_resource",
+          "comparison": ">=",
+          "compare_to": 100
+        }
+      ]
+    }
+  },
+
+  "cast_freeze": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:raycast",
+      "distance": 16,
+      "block": false,
+      "entity": true,
+      "shape_type": "collider",
+      "fluid_handling": "none",
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:execute_command",
+          "command": "power grant @s dark_mage:freeze"
+        }
+      },
+      "hit_action": {
+        "type": "origins:change_resource",
+        "resource": "dark_mage:mana_resource",
+        "change": -50,
+        "operation": "add"
+      },
+      "command_along_ray": "particle minecraft:dragon_breath",
+      "command_step": 1,
+      "command_along_ray_only_on_hit": true
+    },
+    "cooldown": 10,
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": false
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "dark_mage:magic_resource",
+          "comparison": "==",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:resource",
+          "resource": "dark_mage:mana_resource",
+          "comparison": ">=",
+          "compare_to": 50
+        }
+      ]
+    }
+  },
+
+  "cast_heal": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:heal",
+          "amount": 6
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "dark_mage:mana_resource",
+          "change": -20,
+          "operation": "add"
+        }
+      ]
+    },
+    "cooldown": 40,
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": false
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "dark_mage:magic_resource",
+          "comparison": "==",
+          "compare_to": 2
+        },
+        {
+          "type": "origins:resource",
+          "resource": "dark_mage:mana_resource",
+          "comparison": ">=",
+          "compare_to": 20
+        }
+      ]
+    }
+  }
+}

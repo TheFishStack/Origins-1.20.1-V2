@@ -1,1 +1,0 @@
-scoreboard objectives add fs_counter dummy "Counter"

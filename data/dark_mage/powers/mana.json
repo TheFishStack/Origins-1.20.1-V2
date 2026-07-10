@@ -1,0 +1,99 @@
+{
+  "name": "Mana",
+  "description": "Everything has a cost. Your spells cost mana",
+  "type": "origins:multiple",
+
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 200,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 0,
+      "condition": {
+        "type": "origins:resource",
+        "resource": "dark_mage:mana_resource",
+        "comparison": "<",
+        "compare_to": 200
+      }
+    }
+  },
+
+  "charge": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "dark_mage:mana_resource",
+      "change": 2
+    }
+  },
+
+  "boost": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:equipped_item_action",
+          "equipment_slot": "mainhand",
+          "action": {
+            "type": "origins:consume",
+            "amount": 1
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "playsound minecraft:entity.strider.eat master @a ~ ~ ~ 1 0"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "dark_mage:mana_resource",
+          "change": 50
+        }
+      ]
+    },
+    "cooldown": 20,
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.use",
+      "continuous": false
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:glistering_melon_slice"
+            }
+          }
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  },
+
+  "speed": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "addition",
+      "value": 0.05
+    },
+    "tick_rate": 20,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "dark_mage:mana_resource",
+      "comparison": ">=",
+      "compare_to": 40
+    }
+  }
+}
