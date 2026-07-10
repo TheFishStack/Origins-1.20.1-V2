@@ -17,7 +17,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "tellraw @a {\"text\": \"Entity Marked!\", \"color\": \"white\"}"
+          "command": "tellraw @s {\"text\": \"Entity Marked!\", \"color\": \"white\"}"
         }
       ]
     }

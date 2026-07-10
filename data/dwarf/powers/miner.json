@@ -1,6 +1,6 @@
 {
   "name": "Miner",
-  "description": "You start with a stone pickaxe and have one more level of fortune at all times",
+  "description": "You start with a stone pickaxe and have one more level of fortune at all times (fortune sadly doesnt work in 1.20.1)",
   "type": "origins:multiple",
 
   "pickaxe": {

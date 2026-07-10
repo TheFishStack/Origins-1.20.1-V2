@@ -1,6 +1,6 @@
 {
   "name": "Charge",
-  "description": "You only need redstone to survive",
+  "description": "You need lapis lazuli to charge",
   "type": "origins:multiple",
 
   "storage": {

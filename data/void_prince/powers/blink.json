@@ -10,13 +10,6 @@
     "entity": false,
     "shape_type": "collider",
     "fluid_handling": "any",
-    "bientity_action": {
-      "type": "origins:target_action",
-      "action": {
-        "type": "origins:execute_command",
-        "command": "say I've been hit!"
-      }
-    },
     "miss_action": {
       "type": "origins:execute_command",
       "command": "tp @s ^ ^ ^5"

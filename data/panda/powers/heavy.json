@@ -1,6 +1,6 @@
 {
   "name": "Heavy",
-  "description": "You sink faster in water and cat swim",
+  "description": "You sink faster in water and cant swim",
   "type": "origins:multiple",
 
   "sinkinginwater": {

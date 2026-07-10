@@ -1,6 +1,6 @@
 {
   "name": "Sun",
-  "description": "The sun burns your skin of you stay too long",
+  "description": "The sun burns your skin if you stay too long",
 
   "type": "origins:damage_over_time",
   "interval": 20,
