@@ -1,0 +1,17 @@
+{
+  "name": "Carnivore",
+  "description": "You only eat meat",
+  "type": "origins:prevent_item_use",
+  "item_condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:food"
+      },
+      {
+        "type": "origins:meat",
+        "inverted": true
+      }
+    ]
+  }
+}

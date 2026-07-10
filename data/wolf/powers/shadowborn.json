@@ -1,0 +1,15 @@
+{
+  "name": "Shadowborn",
+  "description": "You can see in the dark",
+  "type": "origins:multiple",
+
+  "nightvision": {
+    "type": "origins:night_vision",
+    "strength": 1,
+    "condition": {
+      "type": "origins:brightness",
+      "comparison": "<=",
+      "compare_to": 0.5
+    }
+  }
+}

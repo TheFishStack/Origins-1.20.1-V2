@@ -1,0 +1,14 @@
+{
+  "powers": [
+    "wolf:leap",
+    "wolf:sneaky",
+    "wolf:shadowborn",
+    "wolf:radar",
+    "wolf:carnivore"
+  ],
+  "icon": "minecraft:wolf_spawn_egg",
+  "order": 99,
+  "impact": 1,
+  "name": "Wolf",
+  "description": "The wild version of a dog"
+}
