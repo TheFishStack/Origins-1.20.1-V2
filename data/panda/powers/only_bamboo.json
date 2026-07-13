@@ -50,7 +50,7 @@
         },
         {
           "type": "origins:sneaking",
-          "inverted": true
+          "inverted": false
         }
       ]
     }
