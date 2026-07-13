@@ -1,0 +1,20 @@
+{
+  "name": "Hammer",
+  "description": "You do significantly more damage with a pickaxe",
+  "type": "origins:modify_damage_dealt",
+  "condition": {
+    "type": "origins:equipped_item",
+    "equipment_slot": "mainhand",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "minecraft:pickaxes"
+      }
+    }
+  },
+  "modifier": {
+    "name": "Extra damage with pickaxe",
+    "operation": "addition",
+    "value": 8.0
+  }
+}

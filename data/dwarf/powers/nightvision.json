@@ -4,12 +4,7 @@
   "type": "origins:multiple",
 
   "night_vision": {
-    "type": "origins:night_vision",
-    "strength": 1,
-    "condition": {
-      "type": "origins:brightness",
-      "comparison": "<=",
-      "compare_to": 0.5
-    }
+    "type": "origins:toggle_night_vision",
+    "strength": 1
   }
 }

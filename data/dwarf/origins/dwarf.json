@@ -2,8 +2,8 @@
   "powers": [
     "dwarf:miner",
     "dwarf:nightvision",
-    "dwarf:tough",
-    "dwarf:sleep"
+    "dwarf:hammer",
+    "dwarf:tough"
   ],
   "icon": "minecraft:stone_pickaxe",
   "order": 99,
