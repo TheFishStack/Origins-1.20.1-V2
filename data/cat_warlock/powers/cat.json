@@ -3,25 +3,6 @@
   "description": "Youre a cat, you eat fish, see in the dark and take no fall damage",
   "type": "origins:multiple",
 
-  "onlyfish": {
-    "type": "origins:prevent_item_use",
-    "item_condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:food"
-        },
-        {
-          "inverted": true,
-          "type": "origins:ingredient",
-          "ingredient": {
-            "tag": "cat_warlock:fishes"
-          }
-        }
-      ]
-    }
-  },
-
   "night_vision": {
     "type": "origins:night_vision",
     "strength": 1,
