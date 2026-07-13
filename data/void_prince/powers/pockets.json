@@ -2,7 +2,7 @@
   "name": "Cosmic Pockets",
   "description": "You open a personal storage of 9 slots where you can store items. They wont drop on death",
   "type": "origins:inventory",
-  "container_type": "dropper",
+  "container_type": "chest",
   "drop_on_death": false,
   "key": {
     "key": "key.origins.secondary_active"

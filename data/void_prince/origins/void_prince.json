@@ -2,7 +2,8 @@
   "powers": [
     "void_prince:punch",
     "void_prince:blink",
-    "void_prince:pockets"
+    "void_prince:pockets",
+    "void_prince:no_falldamage"
   ],
   "icon": "minecraft:black_dye",
   "order": 99,
